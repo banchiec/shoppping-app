@@ -5,7 +5,6 @@ export const ContainerShopping = styled.div`
 	flex-wrap: nowrap;
 	flex-direction: column;
 	padding: 10px 20px;
-
 	@media (min-width: 768px) {
 		width: 80%;
 		margin: 2% 10%;

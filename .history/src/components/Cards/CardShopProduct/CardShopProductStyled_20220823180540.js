@@ -3,10 +3,9 @@ export const ContainerCardShop = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin-bottom: 20px ;
-	border-radius: 3px;
-	margin: 0 10px;
+	border-bottom: 1px solid #aaaaaa;
 	@media (min-width: 768px){
-		width: 20%;
+		width: 12%;
 		padding: 1em;
 	}
 	div{

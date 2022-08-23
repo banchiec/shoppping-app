@@ -1,6 +1,7 @@
 import styled from "styled-components"
 export const ContainerCardShop = styled.div`
 	display: flex;
+	justify-content: start;
 	flex-direction: column;
 	margin-bottom: 20px ;
 	border-radius: 3px;
