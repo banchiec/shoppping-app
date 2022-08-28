@@ -35,8 +35,8 @@ export const ContainerRegisterGalery = styled.div`
 	@media (min-width: 768px) {
 		display:  flex;
 		flex-direction: column;
-		width: 350px;
-		height: 700px;
+		width: 400px;
+		height: 800px;
 		border-radius: 5px;
 		padding: 5px;
 		img{

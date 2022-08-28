@@ -7,4 +7,5 @@ export const clothingSizes = {
 }
 
 export const shoeSizes = {
+
 }
