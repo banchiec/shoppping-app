@@ -1,0 +1,4 @@
+const RegisterCategory = () => {
+
+}
+export RegisterCategory
