@@ -1,0 +1,7 @@
+export const LOADING_LOGIN = 'LOADING_LOGIN'
+export const SUCCESS_LOGIN = 'SUCCESS_LOGIN'
+export const ERROR_LOGIN = 'ERROR_LOGIN'
+
+export const LOADING_LOGOUT = 'LOADINGLOGOUT_'
+export const SUCCESS_LOGOUT = 'LOGOUT_SUCCESS'
+export const ERROR_LOGOUT = 'LOGOUT_ERROR'

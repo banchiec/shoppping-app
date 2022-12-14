@@ -1,0 +1,47 @@
+import { SESSION_IN, SESSION_OUT } from '../constants/authConstants'
+import { LOADING_LOGIN, SUCCESS_LOGIN, ERROR_LOGIN } from '../constants/authConstants'
+
+const initialState = {
+	loadingLogin: false,
+	successLogin: false,
+	errorLogin: false,
+	user: null,
+}
+
+export const loginReducer = (state = initialState, action = {}) => {
+	switch (action.type) {
+		case LOADING_LOGIN:
+			return {
+				...state,
+				loadingLogin: true,
+			}
+		case SUCCESS_LOGIN:
+			return {
+				...state,
+				loadingLogin: false,
+				successLogin: true,
+				user: action.payload.user,
+			}
+		case ERROR_LOGIN:
+			return {
+				...state,
+				loadingLogin: false,
+				successLogin: false,
+				errorLogin: true,
+			}
+		case SESSION_IN:
+			return {
+				...state,
+				user: action.payload,
+			}
+		case SESSION_OUT:
+			return {
+				...state,
+				successLogin: false,
+				user: null,
+			}
+
+		default:
+			return state
+	}
+}

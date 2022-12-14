@@ -1,0 +1,3 @@
+export const LOGIN_LOADING = 'LOGIN_LOADING'
+export const LOGIN_SUCCESS = 'LOGIN_'
+export const LOGIN_LOADING = 'LOGIN_LOADING'

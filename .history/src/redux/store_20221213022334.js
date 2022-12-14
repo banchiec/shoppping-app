@@ -1,0 +1,8 @@
+import { createStore } from "@reduxjs/toolkit";
+import { reducer } from './reducers'
+
+
+export const store = createStore(
+	reducer,
+	k
+)
