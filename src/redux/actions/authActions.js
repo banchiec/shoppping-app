@@ -1,22 +1,21 @@
-import axios from 'axios'
+import axios from "axios"
 import {
 	ERROR_LOGIN,
 	LOADING_LOGIN,
 	SESSION_IN,
 	SESSION_OUT,
 	SUCCESS_LOGIN,
-} from '../constants/authConstants'
-import * as USER_HELPERS from '../../utils/userToken'
+} from "../constants/authConstants"
+import * as USER_HELPERS from "../../utils/userToken"
 
 const authService = axios.create({
 	baseURL: `${process.env.REACT_APP_SERVER_URL}/auth`,
 })
 
 export const getLogin = (credentials) => (dispatch) => {
-	console.log(credentials)
 	dispatch({ type: LOADING_LOGIN })
 	authService
-		.post('/login', credentials)
+		.post("/login", credentials)
 		.then((response) => {
 			if (response.status === 200) {
 				USER_HELPERS.setUserCurrent(response.data)
@@ -32,7 +31,7 @@ export const getLogin = (credentials) => (dispatch) => {
 
 export const loggedInSession = () => (dispatch) => {
 	authService
-		.get('session', {
+		.get("session", {
 			headers: {
 				Authorization: USER_HELPERS.getUserToken(),
 			},
@@ -45,7 +44,7 @@ export const loggedInSession = () => (dispatch) => {
 
 export const logoutSession = () => (dispatch) => {
 	authService
-		.delete('/logout', {
+		.delete("/logout", {
 			headers: {
 				Authorization: USER_HELPERS.getUserToken(),
 			},

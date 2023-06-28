@@ -5,12 +5,12 @@ import routes from "./config/routes"
 import * as USER_HELPERS from "./utils/userToken"
 import { loggedInSession, logoutSession } from "./redux/actions/authActions"
 import { useDispatch } from "react-redux"
-import "./assets/css/style.css"
+import { userProps } from "./redux/reducers/authReducers"
 
 export default function App() {
 	const [user, setUser] = useState(null)
 	const [isLoading, setIsLoading] = useState(true)
-	const dispatch = useDispatch()
+	const dispatch: any | void = useDispatch()
 
 	useEffect(() => {
 		const accessToken = USER_HELPERS.getUserToken()
@@ -18,9 +18,9 @@ export default function App() {
 			return setIsLoading(false)
 		}
 		dispatch(loggedInSession())
-	}, [user])
+	}, [user, dispatch])
 
-	function handleLogout() {
+	const handleLogout = () => {
 		const accessToken = USER_HELPERS.getUserToken()
 		if (!accessToken) {
 			setUser(null)
@@ -30,13 +30,14 @@ export default function App() {
 		dispatch(logoutSession())
 	}
 
-	function authenticate(user) {
+	function authenticate(user: userProps | null | undefined | any) {
 		setUser(user)
 	}
 
 	return (
 		<div className="App">
-			<Navbar handleLogout={handleLogout} user={user} />
+			{isLoading}
+			<Navbar />
 			<Routes>
 				{routes({ user, authenticate, handleLogout }).map((route) => (
 					<Route key={route.path} path={route.path} element={route.element} />
